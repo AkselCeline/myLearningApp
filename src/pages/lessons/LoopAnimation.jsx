@@ -65,7 +65,7 @@ export default function LoopAnimation() {
 
             <div className="grid md:grid-cols-2 gap-8 items-start">
                 {/* Visualisation Centrale */}
-                <section className="bg-white rounded-[2.5rem] p-8 border-2 border-slate-100 shadow-sm flex flex-col items-center gap-8">
+                <section className="bg-white dark:bg-slate-900 rounded-[2.5rem] p-8 border-2 border-slate-100 shadow-sm flex flex-col items-center gap-8">
                     <div className="relative flex items-center justify-center">
                         {/* Cercle de progression SVG */}
                         <svg className="w-48 h-48 transform -rotate-90">
@@ -161,15 +161,15 @@ export default function LoopAnimation() {
                     Structure d'une boucle
                 </h4>
                 <div className="grid grid-cols-3 gap-2 text-[10px] font-bold text-center uppercase tracking-tighter sm:text-xs">
-                    <div className="bg-white p-3 rounded-xl shadow-sm border border-slate-100">
+                    <div className="bg-white dark:bg-slate-900 p-3 rounded-xl shadow-sm border border-slate-100">
                         <span className="block text-indigo-500 mb-1">1. Départ</span>
                         i = 0
                     </div>
-                    <div className="bg-white p-3 rounded-xl shadow-sm border border-slate-100">
+                    <div className="bg-white dark:bg-slate-900 p-3 rounded-xl shadow-sm border border-slate-100">
                         <span className="block text-indigo-500 mb-1">2. Condition</span>
                         i &lt; {maxIterations}
                     </div>
-                    <div className="bg-white p-3 rounded-xl shadow-sm border border-slate-100">
+                    <div className="bg-white dark:bg-slate-900 p-3 rounded-xl shadow-sm border border-slate-100">
                         <span className="block text-indigo-500 mb-1">3. Pas (+1)</span>
                         i++
                     </div>

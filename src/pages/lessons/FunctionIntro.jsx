@@ -87,7 +87,7 @@ export default function FunctionIntro() {
                     </label>
                     <div className="flex flex-col sm:flex-row gap-3">
                         <textarea
-                            className="flex-1 p-4 bg-white border-2 border-slate-100 rounded-2xl focus:border-violet-500 outline-none font-medium text-slate-700 transition-all resize-none"
+                            className="flex-1 p-4 bg-white dark:bg-slate-900 border-2 border-slate-100 rounded-2xl focus:border-violet-500 outline-none font-medium text-slate-700 transition-all resize-none"
                             rows="2"
                             value={quizAnswer}
                             onChange={e => setQuizAnswer(e.target.value)}
@@ -117,7 +117,7 @@ export default function FunctionIntro() {
 
                 <div className="grid gap-4">
                     {functions.map(func => (
-                        <div key={func.name} className="group bg-white p-5 rounded-[1.5rem] border-2 border-slate-100 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:border-violet-200 transition-all hover:shadow-lg">
+                        <div key={func.name} className="group bg-white dark:bg-slate-900 p-5 rounded-[1.5rem] border-2 border-slate-100 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:border-violet-200 transition-all hover:shadow-lg">
                             <div className="flex items-center gap-4">
                                 <span className="text-3xl bg-slate-50 w-12 h-12 flex items-center justify-center rounded-xl group-hover:bg-violet-50 transition-colors">
                                     {func.icon}

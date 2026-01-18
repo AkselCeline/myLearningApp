@@ -33,7 +33,7 @@ export default function LetVariablesIntro() {
 
             {/* Illustration : Boîte vs Code */}
             <section className="grid md:grid-cols-2 gap-6">
-                <div className="bg-white p-6 rounded-[2rem] border-2 border-slate-100 flex flex-col items-center justify-center space-y-4 shadow-sm">
+                <div className="bg-white dark:bg-slate-900 p-6 rounded-[2rem] border-2 border-slate-100 flex flex-col items-center justify-center space-y-4 shadow-sm">
                     <div className="relative">
                         <span className="text-6xl">📦</span>
                         <div className="absolute -top-2 -right-2 bg-orange-500 text-white text-[10px] px-2 py-1 rounded-md font-bold shadow-sm">
@@ -41,7 +41,7 @@ export default function LetVariablesIntro() {
                         </div>
                     </div>
                     <p className="text-slate-500 text-xs font-bold uppercase tracking-widest text-center">
-                        La boîte contient <br/> <span className="text-slate-900 text-lg">"Samira"</span>
+                        La boîte contient <br/> <span className="text-slate-900 dark:text-slate-100 text-lg">"Samira"</span>
                     </p>
                 </div>
 
@@ -54,7 +54,7 @@ export default function LetVariablesIntro() {
             </section>
 
             {/* Mini Challenge interactif */}
-            <section className="bg-white rounded-[2.5rem] border-2 border-slate-100 p-8 shadow-xl shadow-slate-200/50">
+            <section className="bg-white dark:bg-slate-900 rounded-[2.5rem] border-2 border-slate-100 p-8 shadow-xl shadow-slate-200/50">
                 <div className="mb-6 text-center">
                     <h2 className="text-xl font-black text-slate-800 uppercase tracking-tighter italic">Le Prédicteur de Message</h2>
                     <p className="text-slate-400 font-bold text-[10px] uppercase mt-1">Devine ce que l'ordinateur va dire</p>

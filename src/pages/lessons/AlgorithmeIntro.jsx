@@ -67,7 +67,7 @@ export default function AlgorithmeIntro() {
                 </h2>
                 <div className="grid gap-3">
                     {steps.map((step, idx) => (
-                        <div key={step.id} className="flex items-center gap-4 bg-white p-4 rounded-2xl border border-slate-100 shadow-sm">
+                        <div key={step.id} className="flex items-center gap-4 bg-white dark:bg-slate-900 dark:bg-slate-900 p-4 rounded-2xl border border-slate-100 shadow-sm">
                             <span className="flex-shrink-0 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center font-black text-slate-500 text-sm">
                                 {idx + 1}
                             </span>
@@ -87,7 +87,7 @@ export default function AlgorithmeIntro() {
                     <div className="flex flex-col sm:flex-row gap-3">
                         <input
                             type="text"
-                            className="flex-1 p-4 bg-white border-2 border-slate-200 rounded-2xl focus:outline-none focus:ring-4 focus:ring-teal-500/10 focus:border-teal-500 transition-all font-bold text-slate-700"
+                            className="flex-1 p-4 bg-white dark:bg-slate-900 dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-800 rounded-2xl focus:outline-none focus:ring-4 focus:ring-teal-500/10 focus:border-teal-500 transition-all font-bold text-slate-700"
                             value={quizAnswer}
                             onChange={e => setQuizAnswer(e.target.value)}
                             placeholder="Écris ta réponse..."
@@ -124,7 +124,7 @@ export default function AlgorithmeIntro() {
                             onDragStart={() => handleDragStart(step.id)}
                             onDragOver={handleDragOver}
                             onDrop={() => handleDrop(step.id)}
-                            className={`group flex items-center p-5 bg-white border-2 rounded-2xl cursor-grab active:cursor-grabbing transition-all ${
+                            className={`group flex items-center p-5 bg-white dark:bg-slate-900 dark:bg-slate-900 border-2 rounded-2xl cursor-grab active:cursor-grabbing transition-all ${
                                 draggedId === step.id ? "opacity-30 border-dashed border-teal-300" : "border-slate-100 hover:border-teal-200 hover:shadow-md"
                             }`}
                         >

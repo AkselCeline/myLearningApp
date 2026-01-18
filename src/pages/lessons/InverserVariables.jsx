@@ -41,7 +41,7 @@ export default function InverserVariables() {
 
 
             {/* Visualisation des Variables */}
-            <section className="bg-white rounded-[2.5rem] border-2 border-slate-100 p-8 shadow-sm">
+            <section className="bg-white dark:bg-slate-900 rounded-[2.5rem] border-2 border-slate-100 p-8 shadow-sm">
                 <div className="flex justify-around items-end gap-4 mb-10">
                     {/* Variable A */}
                     <div className="flex flex-col items-center gap-3">

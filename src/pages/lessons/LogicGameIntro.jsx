@@ -42,7 +42,7 @@ export default function LogicGameIntro() {
 
             {/* Zone de Jeu */}
             <div className="grid md:grid-cols-2 gap-8 items-start">
-                <section className="bg-white rounded-[2.5rem] p-8 border-2 border-slate-100 shadow-sm space-y-6">
+                <section className="bg-white dark:bg-slate-900 rounded-[2.5rem] p-8 border-2 border-slate-100 shadow-sm space-y-6">
                     <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-widest text-center">Collecte de données</h3>
 
                     {[

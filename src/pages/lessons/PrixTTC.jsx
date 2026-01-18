@@ -57,7 +57,7 @@ export default function AlgoPrixHTTTC() {
 
 
             {/* Simulateur de Caisse */}
-            <section className="bg-white rounded-[2rem] border-2 border-slate-100 p-8 shadow-sm">
+            <section className="bg-white dark:bg-slate-900 rounded-[2rem] border-2 border-slate-100 p-8 shadow-sm">
                 <div className="grid sm:grid-cols-2 gap-6 mb-8">
                     <div className="space-y-2">
                         <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-2">Prix Hors Taxe (€)</label>

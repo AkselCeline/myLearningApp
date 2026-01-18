@@ -26,7 +26,7 @@ export default function IfConditionIntro() {
                     <h3 className="text-amber-100 text-xs font-black uppercase tracking-[0.2em] mb-4">La structure If / Else</h3>
                     <p className="text-2xl font-black leading-tight">
                         C'est l'heure de faire <br/>
-                        un <span className="underline decoration-white underline-offset-4 text-slate-900 italic">choix logique</span>.
+                        un <span className="underline decoration-white underline-offset-4 text-slate-900 dark:text-slate-100 italic">choix logique</span>.
                     </p>
                     <p className="mt-4 text-amber-50 font-medium">
                         Le programme agit comme un aiguillage sur un chemin de fer.
@@ -63,7 +63,7 @@ export default function IfConditionIntro() {
             </div>
 
             {/* Simulateur de Condition */}
-            <section className="bg-white rounded-[2.5rem] border-2 border-slate-100 p-8 shadow-xl shadow-slate-200/50">
+            <section className="bg-white dark:bg-slate-900 rounded-[2.5rem] border-2 border-slate-100 p-8 shadow-xl shadow-slate-200/50">
                 <div className="mb-8 text-center">
                     <h2 className="text-xl font-black text-slate-800 uppercase tracking-tighter italic">Machine à Décider</h2>
                     <p className="text-slate-400 font-bold text-xs uppercase mt-1">Teste l'algorithme avec ton âge</p>
@@ -71,7 +71,7 @@ export default function IfConditionIntro() {
 
                 <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="relative group">
-                        <label className="absolute -top-3 left-6 bg-white px-2 text-[10px] font-black text-amber-500 uppercase tracking-widest z-10">
+                        <label className="absolute -top-3 left-6 bg-white dark:bg-slate-900 px-2 text-[10px] font-black text-amber-500 uppercase tracking-widest z-10">
                             Entrée de donnée
                         </label>
                         <input

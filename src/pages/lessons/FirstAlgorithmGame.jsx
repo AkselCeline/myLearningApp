@@ -82,7 +82,7 @@ export default function FirstAlgorithmGame() {
                     <p>Guide le robot vers le 🚩 en utilisant ces commandes :</p>
                     <div className="flex flex-wrap gap-2 py-2">
                         {['avancer()', 'tournerDroite()', 'tournerGauche()'].map(cmd => (
-                            <code key={cmd} className="bg-white px-2 py-1 rounded-lg border border-indigo-200 font-bold text-indigo-600">
+                            <code key={cmd} className="bg-white dark:bg-slate-900 px-2 py-1 rounded-lg border border-indigo-200 font-bold text-indigo-600">
                                 {cmd}
                             </code>
                         ))}
@@ -134,7 +134,7 @@ export default function FirstAlgorithmGame() {
                             return (
                                 <div
                                     key={i}
-                                    className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center shadow-sm relative overflow-hidden"
+                                    className="w-20 h-20 bg-white dark:bg-slate-900 rounded-2xl flex items-center justify-center shadow-sm relative overflow-hidden"
                                 >
                                     {isGoal && <span className="text-3xl animate-pulse">🚩</span>}
                                     {isRobot && (

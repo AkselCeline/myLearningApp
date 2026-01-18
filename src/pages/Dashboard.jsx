@@ -36,7 +36,7 @@ export default function Dashboard() {
                     </div>
 
                     {/* Carte Niveau Global */}
-                    <div className="bg-white p-6 rounded-[2rem] shadow-sm border border-slate-100 flex items-center gap-6 min-w-[320px]">
+                    <div className="bg-white dark:bg-slate-900 dark:bg-slate-900 p-6 rounded-[2rem] shadow-sm border border-slate-100 flex items-center gap-6 min-w-[320px]">
                         <div className="relative flex-shrink-0">
                             {/* Cercle de niveau */}
                             <div className="w-16 h-16 rounded-full bg-teal-500 flex items-center justify-center text-white text-2xl font-black shadow-lg shadow-teal-200">
@@ -70,7 +70,7 @@ export default function Dashboard() {
                                 <Link
                                     key={theme.name}
                                     to={`/lessons/${theme.name.toLowerCase()}`}
-                                    className="group bg-white border border-slate-100 rounded-3xl p-5 hover:border-teal-300 hover:shadow-xl hover:shadow-teal-900/5 transition-all duration-300"
+                                    className="group bg-white dark:bg-slate-900 dark:bg-slate-900 border border-slate-100 rounded-3xl p-5 hover:border-teal-300 hover:shadow-xl hover:shadow-teal-900/5 transition-all duration-300"
                                 >
                                     <div className="flex items-start justify-between mb-4">
                                         <div className="text-4xl">{theme.icon}</div>
@@ -96,7 +96,7 @@ export default function Dashboard() {
                         <h2 className="text-2xl font-bold text-slate-800 flex items-center gap-2">
                             <span className="bg-amber-100 p-2 rounded-lg">🏆</span> Succès
                         </h2>
-                        <div className="bg-white border border-slate-100 rounded-[2rem] p-6 grid grid-cols-2 gap-4">
+                        <div className="bg-white dark:bg-slate-900 dark:bg-slate-900 border border-slate-100 rounded-[2rem] p-6 grid grid-cols-2 gap-4">
                             {badges.map((badge) => (
                                 <div
                                     key={badge.name}
@@ -116,7 +116,7 @@ export default function Dashboard() {
                                     </p>
                                     {!badge.unlocked && (
                                         <div className="absolute inset-0 bg-slate-900/5 rounded-2xl flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                            <span className="bg-white text-[10px] font-bold px-2 py-1 rounded shadow-sm">Bloqué</span>
+                                            <span className="bg-white dark:bg-slate-900 dark:bg-slate-900 text-[10px] font-bold px-2 py-1 rounded shadow-sm">Bloqué</span>
                                         </div>
                                     )}
                                 </div>

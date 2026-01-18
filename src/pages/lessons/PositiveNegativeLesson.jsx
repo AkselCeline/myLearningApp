@@ -91,7 +91,7 @@ export default function PositiveNegativeLesson() {
             </div>
 
             {/* Quiz Rapide */}
-            <section className="bg-white rounded-[2.5rem] border-2 border-slate-100 p-8 shadow-sm">
+            <section className="bg-white dark:bg-slate-900 rounded-[2.5rem] border-2 border-slate-100 p-8 shadow-sm">
                 <form onSubmit={checkAnswer} className="space-y-4 text-center">
                     <label className="block text-slate-600 font-black text-sm uppercase tracking-tighter mb-4">
                         Selon l'algorithme, {exampleNumber} est un nombre...
@@ -133,8 +133,8 @@ export default function PositiveNegativeLesson() {
                                 onDragOver={e => e.preventDefault()}
                                 className={`h-16 rounded-2xl border-2 flex flex-col items-center justify-center transition-all duration-300 ${
                                     assignments[n.id]
-                                        ? 'bg-white border-blue-400 shadow-md scale-105'
-                                        : 'bg-slate-100 border-slate-200 border-dashed'
+                                        ? 'bg-white dark:bg-slate-900 border-blue-400 shadow-md scale-105'
+                                        : 'bg-slate-100 border-slate-200 dark:border-slate-800 border-dashed'
                                 }`}
                             >
                                 <span className="text-xl font-black text-slate-700">{n.value}</span>

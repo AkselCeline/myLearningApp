@@ -51,7 +51,7 @@ export default function VariableIntro() {
 
 
             {/* Visualisation Interactive */}
-            <section className="bg-white rounded-[2.5rem] border-2 border-slate-100 p-8 shadow-sm">
+            <section className="bg-white dark:bg-slate-900 rounded-[2.5rem] border-2 border-slate-100 p-8 shadow-sm">
                 <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-6 text-center">Explorateur de Mémoire</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                     {exampleVariables.map(v => (
@@ -101,7 +101,7 @@ export default function VariableIntro() {
                     <h4 className="text-amber-800 font-black text-sm uppercase mb-4 tracking-widest">Atelier d'Assignation</h4>
                     <div className="space-y-4">
                         {gameVariables.map(v => (
-                            <div key={v.id} className="flex items-center justify-between bg-white p-4 rounded-2xl shadow-sm border border-amber-100 transition-all hover:border-amber-300">
+                            <div key={v.id} className="flex items-center justify-between bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-amber-100 transition-all hover:border-amber-300">
                                 <code className="text-amber-600 font-black text-lg underline decoration-amber-200 underline-offset-4">{v.label}</code>
                                 <select
                                     onChange={e => setUserPairs(prev => ({...prev, [v.id]: e.target.value}))}

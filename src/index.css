@@ -21,3 +21,8 @@
 .animate-question {
     animation: slideUpFade 0.4s ease-out forwards;
 }
+@layer components {
+    .module-container {
+        @apply bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 dark:bg-slate-900 dark:text-slate-100 transition-colors;
+    }
+}

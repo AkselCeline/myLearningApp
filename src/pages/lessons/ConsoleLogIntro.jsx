@@ -33,7 +33,7 @@ export default function ConsoleLogIntro() {
             <section className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-3">
                     <p className="text-slate-500 text-[10px] font-black uppercase ml-4">Ton Code ✍️</p>
-                    <div className="bg-white border-2 border-slate-100 p-6 rounded-[1.5rem] font-mono text-sm text-indigo-600 shadow-sm">
+                    <div className="bg-white dark:bg-slate-900 border-2 border-slate-100 p-6 rounded-[1.5rem] font-mono text-sm text-indigo-600 shadow-sm">
                         console.log(<span className="text-amber-600">"Bonjour !"</span>);
                     </div>
                 </div>
@@ -46,7 +46,7 @@ export default function ConsoleLogIntro() {
             </section>
 
             {/* Challenge : Le Prédicteur */}
-            <section className="bg-white rounded-[2.5rem] border-2 border-slate-100 p-8 shadow-xl shadow-slate-200/50">
+            <section className="bg-white dark:bg-slate-900 rounded-[2.5rem] border-2 border-slate-100 p-8 shadow-xl shadow-slate-200/50">
                 <div className="mb-8">
                     <h2 className="text-2xl font-black text-slate-800">Mission : Prédire la Console</h2>
                     <p className="text-slate-500 font-medium mt-1 text-sm">Observe ce bloc de code et devine ce qui s'affichera.</p>
@@ -93,7 +93,7 @@ export default function ConsoleLogIntro() {
             {/* Sandbox Tips */}
             <section className="bg-indigo-50 rounded-[2rem] p-8 border border-indigo-100">
                 <div className="flex items-start gap-4">
-                    <div className="text-3xl bg-white p-3 rounded-2xl shadow-sm">🚀</div>
+                    <div className="text-3xl bg-white dark:bg-slate-900 p-3 rounded-2xl shadow-sm">🚀</div>
                     <div>
                         <h4 className="text-indigo-900 font-black text-lg mb-2">À toi de tester !</h4>
                         <p className="text-indigo-700 font-medium text-sm leading-relaxed mb-4">

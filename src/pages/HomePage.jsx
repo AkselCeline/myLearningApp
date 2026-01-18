@@ -16,7 +16,7 @@ export default function HomePage() {
                         🚀 Plateforme Interactive
                     </span>
 
-                    <h1 className="text-5xl md:text-6xl font-black text-slate-900 leading-[1.1]">
+                    <h1 className="text-5xl md:text-6xl font-black text-slate-900 dark:text-slate-100 leading-[1.1]">
                         Apprends en <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-emerald-600">
                             t'amusant.
@@ -34,7 +34,7 @@ export default function HomePage() {
                         >
                             Démarrer maintenant
                         </button>
-                        <button className="bg-white border border-slate-200 text-slate-700 font-bold py-4 px-10 rounded-2xl hover:bg-slate-50 transition-all">
+                        <button className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 font-bold py-4 px-10 rounded-2xl hover:bg-slate-50 transition-all">
                             Voir les cours
                         </button>
                     </div>

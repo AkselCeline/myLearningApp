@@ -63,7 +63,7 @@ export default function BoucleIntro() {
                 </h2>
                 <div className="flex flex-wrap gap-3">
                     {countingSteps.map((num) => (
-                        <div key={num} className="flex items-center justify-center w-12 h-12 bg-white border-2 border-sky-100 rounded-xl shadow-sm text-sky-600 font-black text-xl animate-bounce" style={{ animationDelay: `${num * 0.1}s` }}>
+                        <div key={num} className="flex items-center justify-center w-12 h-12 bg-white dark:bg-slate-900 border-2 border-sky-100 rounded-xl shadow-sm text-sky-600 font-black text-xl animate-bounce" style={{ animationDelay: `${num * 0.1}s` }}>
                             {num}
                         </div>
                     ))}
@@ -81,7 +81,7 @@ export default function BoucleIntro() {
                     <div className="flex flex-col sm:flex-row gap-3">
                         <input
                             type="number"
-                            className="flex-1 p-4 bg-white border-2 border-slate-200 rounded-2xl focus:border-sky-500 outline-none font-bold text-slate-700 transition-all text-center"
+                            className="flex-1 p-4 bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-800 rounded-2xl focus:border-sky-500 outline-none font-bold text-slate-700 transition-all text-center"
                             value={quizAnswer}
                             onChange={e => setQuizAnswer(e.target.value)}
                             placeholder="Écris le chiffre..."
@@ -121,7 +121,7 @@ export default function BoucleIntro() {
                             onDragStart={() => handleDragStart(num)}
                             onDragOver={handleDragOver}
                             onDrop={() => handleDrop(num)}
-                            className={`flex items-center p-5 bg-white border-2 rounded-2xl cursor-grab active:cursor-grabbing transition-all ${
+                            className={`flex items-center p-5 bg-white dark:bg-slate-900 border-2 rounded-2xl cursor-grab active:cursor-grabbing transition-all ${
                                 draggedId === num ? "opacity-20 scale-95 border-dashed border-sky-300" : "border-slate-100 hover:border-sky-200 hover:shadow-md"
                             }`}
                         >

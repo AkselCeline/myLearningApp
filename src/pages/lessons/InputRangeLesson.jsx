@@ -79,7 +79,7 @@ export default function InputRangeLesson() {
 
 
             {/* Testeur Interactif */}
-            <section className="bg-white rounded-[2rem] border-2 border-slate-100 p-8 shadow-sm">
+            <section className="bg-white dark:bg-slate-900 rounded-[2rem] border-2 border-slate-100 p-8 shadow-sm">
                 <div className="flex flex-col gap-6">
                     <div>
                         <label className="block text-slate-500 font-black text-[10px] uppercase tracking-widest mb-3">Poste de contrôle</label>
@@ -133,13 +133,13 @@ export default function InputRangeLesson() {
                 </div>
 
                 {/* Jetons restants */}
-                <div className="bg-white p-6 rounded-3xl border-2 border-dashed border-slate-200 min-h-[100px] flex flex-wrap justify-center gap-3 mb-8">
+                <div className="bg-white dark:bg-slate-900 p-6 rounded-3xl border-2 border-dashed border-slate-200 dark:border-slate-800 min-h-[100px] flex flex-wrap justify-center gap-3 mb-8">
                     {getRemaining().map((num) => (
                         <div
                             key={num}
                             draggable
                             onDragStart={() => handleDragStart(num)}
-                            className="w-12 h-12 bg-white border-2 border-slate-100 rounded-xl flex items-center justify-center font-black text-slate-700 shadow-sm cursor-grab active:cursor-grabbing hover:border-emerald-300 hover:text-emerald-600 transition-all"
+                            className="w-12 h-12 bg-white dark:bg-slate-900 border-2 border-slate-100 rounded-xl flex items-center justify-center font-black text-slate-700 shadow-sm cursor-grab active:cursor-grabbing hover:border-emerald-300 hover:text-emerald-600 transition-all"
                         >
                             {num}
                         </div>

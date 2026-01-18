@@ -10,7 +10,7 @@ export default function LessonPage() {
     if (!themeData) {
         return (
             <div className="min-h-screen flex items-center justify-center bg-slate-50">
-                <div className="text-center p-8 bg-white rounded-3xl shadow-xl">
+                <div className="text-center p-8 bg-white dark:bg-slate-900 rounded-3xl shadow-xl">
                     <p className="text-4xl mb-4">🔍</p>
                     <h2 className="text-2xl font-bold text-slate-800">Thème introuvable</h2>
                     <Link to="/dashboard" className="text-teal-600 font-bold hover:underline mt-4 block">Retour au dashboard</Link>
@@ -31,7 +31,7 @@ export default function LessonPage() {
                     <Link to="/dashboard" className="text-teal-600 font-bold text-sm mb-2 block hover:translate-x-[-4px] transition-transform">
                         ← Retour au Dashboard
                     </Link>
-                    <h1 className="text-4xl font-black text-slate-900 leading-tight">
+                    <h1 className="text-4xl font-black text-slate-900 dark:text-slate-100 leading-tight">
                         Parcours : <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-emerald-600">
                             {themeData.theme}
                         </span>
@@ -50,8 +50,8 @@ export default function LessonPage() {
 
                             <div className={`transition-all duration-300 rounded-[2rem] overflow-hidden ${
                                 openLevel === level.name
-                                    ? "bg-white shadow-xl ring-1 ring-slate-100"
-                                    : "bg-slate-100/50 border border-transparent hover:bg-white hover:border-slate-200"
+                                    ? "bg-white dark:bg-slate-900 shadow-xl ring-1 ring-slate-100"
+                                    : "bg-slate-100/50 border border-transparent hover:bg-white dark:bg-slate-900 hover:border-slate-200"
                             }`}>
                                 <button
                                     onClick={() => toggleLevel(level.name)}
@@ -59,7 +59,7 @@ export default function LessonPage() {
                                 >
                                     <div className="flex items-center gap-6">
                                         <div className={`w-12 h-12 rounded-2xl flex items-center justify-center font-bold text-lg shadow-sm transition-colors ${
-                                            openLevel === level.name ? "bg-teal-500 text-white" : "bg-white text-slate-400 group-hover:text-teal-500"
+                                            openLevel === level.name ? "bg-teal-500 text-white" : "bg-white dark:bg-slate-900 text-slate-400 group-hover:text-teal-500"
                                         }`}>
                                             {index + 1}
                                         </div>

@@ -60,7 +60,7 @@ export default function LeapYearLesson() {
                             Le modulo donne le <span className="underline decoration-amber-500 underline-offset-4">reste</span> d'une division.
                         </p>
                         <p className="text-amber-700 text-sm mt-3 italic">
-                            Si <code className="bg-white px-2 py-0.5 rounded font-bold">Année % 4 === 0</code>, cela veut dire que l'année est parfaitement divisible par 4.
+                            Si <code className="bg-white dark:bg-slate-900 px-2 py-0.5 rounded font-bold">Année % 4 === 0</code>, cela veut dire que l'année est parfaitement divisible par 4.
                         </p>
                     </div>
                     <div className="bg-white/60 p-4 rounded-2xl space-y-2 font-mono text-sm shadow-inner">
@@ -71,7 +71,7 @@ export default function LeapYearLesson() {
             </div>
 
             {/* Testeur d'année */}
-            <section className="bg-white rounded-[2rem] border-2 border-slate-100 p-8 shadow-sm">
+            <section className="bg-white dark:bg-slate-900 rounded-[2rem] border-2 border-slate-100 p-8 shadow-sm">
                 <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-6">Simulateur de Calendrier</h3>
                 <div className="flex flex-col sm:flex-row gap-3 mb-6">
                     <input
@@ -126,7 +126,7 @@ export default function LeapYearLesson() {
                 {/* Quiz Rapide */}
                 <div className="bg-indigo-50 p-8 rounded-[2rem] border border-indigo-100">
                     <h4 className="text-indigo-900 font-black flex items-center gap-2 mb-4">
-                        <span className="p-2 bg-white rounded-lg shadow-sm">🎯</span> Quiz Express
+                        <span className="p-2 bg-white dark:bg-slate-900 rounded-lg shadow-sm">🎯</span> Quiz Express
                     </h4>
                     <p className="text-indigo-700 font-medium text-sm mb-4 leading-relaxed">
                         L'année <strong>1900</strong> est-elle bissextile ?

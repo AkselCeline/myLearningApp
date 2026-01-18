@@ -50,7 +50,7 @@ export default function AlphabetOrderLesson() {
         <div className="space-y-10 py-4 animate-question">
             {/* Header d'introduction */}
             <section className="space-y-4">
-                <h2 className="text-2xl font-black text-slate-900 italic underline decoration-teal-500 underline-offset-8">
+                <h2 className="text-2xl font-black text-slate-900 dark:text-slate-100 italic underline decoration-teal-500 underline-offset-8">
                     Trier par ordre alphabétique
                 </h2>
                 <p className="text-slate-600 leading-relaxed font-medium">
@@ -74,7 +74,7 @@ export default function AlphabetOrderLesson() {
             </div>
 
             {/* Tutoriel Interactif */}
-            <section className="bg-white border-2 border-slate-100 rounded-[2rem] p-8 shadow-sm relative">
+            <section className="bg-white dark:bg-slate-900 dark:bg-slate-900 border-2 border-slate-100 rounded-[2rem] p-8 shadow-sm relative">
                 <div className="absolute -top-4 left-8 bg-teal-500 text-white text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-widest">
                     Guide Interactif
                 </div>
@@ -109,7 +109,7 @@ export default function AlphabetOrderLesson() {
                         value={userAnswer}
                         onChange={e => setUserAnswer(e.target.value)}
                         placeholder="Ta réponse..."
-                        className="flex-1 p-4 bg-white border-2 border-slate-100 rounded-2xl focus:border-teal-500 outline-none font-bold text-slate-700 transition-all"
+                        className="flex-1 p-4 bg-white dark:bg-slate-900 dark:bg-slate-900 border-2 border-slate-100 rounded-2xl focus:border-teal-500 outline-none font-bold text-slate-700 transition-all"
                     />
                     <button type="submit" className="bg-slate-900 text-white px-8 py-4 rounded-2xl font-black hover:bg-slate-800 transition-all">
                         Vérifier
@@ -137,7 +137,7 @@ export default function AlphabetOrderLesson() {
                             onDragStart={() => handleDragStart(index)}
                             onDragOver={handleDragOver}
                             onDrop={() => handleDrop(index)}
-                            className="group flex items-center p-5 bg-white border-2 border-slate-100 rounded-2xl cursor-grab active:cursor-grabbing hover:border-teal-300 hover:shadow-xl hover:shadow-teal-900/5 transition-all animate-question"
+                            className="group flex items-center p-5 bg-white dark:bg-slate-900 border-2 border-slate-100 rounded-2xl cursor-grab active:cursor-grabbing hover:border-teal-300 hover:shadow-xl hover:shadow-teal-900/5 transition-all animate-question"
                             style={{ animationDelay: `${index * 0.05}s` }}
                         >
                             <div className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center mr-4 group-hover:bg-teal-50 group-hover:border-teal-200 transition-colors font-black text-slate-400 group-hover:text-teal-500">

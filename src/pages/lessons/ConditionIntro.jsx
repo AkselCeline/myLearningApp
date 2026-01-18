@@ -72,7 +72,7 @@ export default function ConditionIntroComplet() {
             {/* Liste visuelle des conditions */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {weatherConditions.map((w) => (
-                    <div key={w.id} className="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm flex items-center gap-3">
+                    <div key={w.id} className="bg-white dark:bg-slate-900 p-4 rounded-2xl border border-slate-100 shadow-sm flex items-center gap-3">
                         <span className="text-2xl">{w.emoji}</span>
                         <span className="text-slate-600 font-bold text-sm">{w.condition}</span>
                     </div>
@@ -80,7 +80,7 @@ export default function ConditionIntroComplet() {
             </div>
 
             {/* Jeu d'association Interactif */}
-            <section className="bg-white rounded-[2.5rem] border-2 border-slate-100 p-8 shadow-xl shadow-slate-200/50">
+            <section className="bg-white dark:bg-slate-900 rounded-[2.5rem] border-2 border-slate-100 p-8 shadow-xl shadow-slate-200/50">
                 <div className="text-center mb-8">
                     <h3 className="text-2xl font-black text-slate-800">Laboratoire de Conditions</h3>
                     <p className="text-slate-400 font-bold text-xs uppercase tracking-widest mt-1">Associe l'action à la météo</p>
@@ -128,7 +128,7 @@ export default function ConditionIntroComplet() {
                                     className={`p-5 rounded-2xl text-left font-bold transition-all border-2 ${
                                         selectedAction === action
                                             ? "bg-emerald-50 border-emerald-500 text-emerald-900"
-                                            : "bg-white border-slate-100 text-slate-600 hover:border-indigo-200"
+                                            : "bg-white dark:bg-slate-900 border-slate-100 text-slate-600 hover:border-indigo-200"
                                     }`}
                                 >
                                     {action}
@@ -168,7 +168,7 @@ export default function ConditionIntroComplet() {
             <section className="bg-slate-50 p-8 rounded-[2rem] border border-slate-100">
                 <h3 className="text-xl font-black text-slate-800 mb-6">Test de réflexe</h3>
                 <form onSubmit={handleQuizSubmit} className="space-y-4">
-                    <div className="bg-white p-6 rounded-2xl border border-slate-200">
+                    <div className="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200">
                         <label className="block text-slate-600 font-bold mb-4 italic">
                             "Si l'ordinateur détecte qu'il pleut..."
                         </label>

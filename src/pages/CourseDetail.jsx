@@ -53,7 +53,7 @@ export default function CourseDetail() {
     if (!course) {
         return (
             <div className="min-h-screen flex items-center justify-center bg-slate-50">
-                <div className="text-center p-10 bg-white rounded-[2.5rem] shadow-xl border border-slate-100">
+                <div className="text-center p-10 bg-white dark:bg-slate-900 rounded-[2.5rem] shadow-xl border border-slate-100">
                     <p className="text-5xl mb-4">🔍</p>
                     <h2 className="text-2xl font-black text-slate-800">Cours introuvable</h2>
                     <button onClick={() => navigate(-1)} className="mt-6 bg-teal-500 text-white px-8 py-3 rounded-2xl font-bold shadow-lg shadow-teal-200 hover:bg-teal-600 transition-all">
@@ -109,7 +109,7 @@ export default function CourseDetail() {
             <main className="max-w-4xl mx-auto px-6">
                 {/* TITRE DU COURS */}
                 <header className="mb-10 text-center md:text-left">
-                    <h1 className="text-4xl md:text-5xl font-black text-slate-900 leading-tight">
+                    <h1 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-slate-100 leading-tight">
                         {course.title}
                     </h1>
                     <div className="h-1.5 w-20 bg-teal-500 mt-6 rounded-full mx-auto md:mx-0"></div>
@@ -120,14 +120,14 @@ export default function CourseDetail() {
 
                     {/* CAS 1 : COMPOSANT INTERACTIF (Jeu / Animation) */}
                     {CustomComponent ? (
-                            <div className="bg-white rounded-[2.5rem] p-4 md:p-10 shadow-xl shadow-slate-200/50 border border-slate-100 animate-question">
+                            <div className="bg-white dark:bg-slate-900 rounded-[2.5rem] p-4 md:p-10 shadow-xl shadow-slate-200/50 border border-slate-100 animate-question">
                                 <CustomComponent />
                             </div>
                         ) :
 
                         /* CAS 2 : LECTEUR DE COURS (Texte) */
                         course.type === "cours" ? (
-                                <article className="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-xl shadow-slate-200/50 border border-slate-100 animate-question">
+                                <article className="bg-white dark:bg-slate-900 rounded-[2.5rem] p-8 md:p-12 shadow-xl shadow-slate-200/50 border border-slate-100 animate-question">
                                     <div className="whitespace-pre-line text-slate-600 text-lg leading-relaxed font-medium font-sans">
                                         {typeof course.content === 'string' ? course.content : "Contenu indisponible."}
                                     </div>
@@ -136,7 +136,7 @@ export default function CourseDetail() {
 
                             /* CAS 3 : INTERFACE DE QUIZ */
                             (
-                                <div className="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-xl shadow-slate-200/50 border border-slate-100 relative overflow-hidden">
+                                <div className="bg-white dark:bg-slate-900 rounded-[2.5rem] p-8 md:p-12 shadow-xl shadow-slate-200/50 border border-slate-100 relative overflow-hidden">
                                     {!showResult ? (
                                         <div key={currentQ} className="space-y-8 animate-question">
                                             {/* Progression */}
@@ -164,7 +164,7 @@ export default function CourseDetail() {
                                                         style={{ animationDelay: `${idx * 0.1}s` }}
                                                         className="animate-question group flex items-center p-6 bg-slate-50 border-2 border-slate-100 rounded-[1.5rem] text-left hover:border-teal-500 hover:bg-teal-50 hover:shadow-md transition-all duration-200 active:scale-[0.98]"
                                                     >
-                                                <span className="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center mr-4 font-black text-slate-400 group-hover:border-teal-200 group-hover:text-teal-500 transition-colors">
+                                                <span className="w-10 h-10 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center mr-4 font-black text-slate-400 group-hover:border-teal-200 group-hover:text-teal-500 transition-colors">
                                                     {String.fromCharCode(65 + idx)}
                                                 </span>
                                                         <span className="text-lg font-bold text-slate-700 group-hover:text-teal-900 transition-colors">
@@ -186,7 +186,7 @@ export default function CourseDetail() {
                                                 )}
                                             </div>
                                             <div>
-                                                <h2 className="text-4xl font-black text-slate-900 mb-2">Quiz terminé !</h2>
+                                                <h2 className="text-4xl font-black text-slate-900 dark:text-slate-100 mb-2">Quiz terminé !</h2>
                                                 <p className="text-slate-500 text-xl">
                                                     Tu as obtenu <span className="text-teal-600 font-black">{score}</span> sur <span className="font-bold">{questions.length}</span>.
                                                 </p>

@@ -95,7 +95,7 @@ export default function EvenOddLesson() {
             </section>
 
             {/* Testeur de nombre */}
-            <section className="bg-white rounded-[2rem] p-8 border-2 border-slate-100 shadow-sm">
+            <section className="bg-white dark:bg-slate-900 rounded-[2rem] p-8 border-2 border-slate-100 shadow-sm">
                 <h3 className="text-xl font-black text-slate-800 mb-6 flex items-center gap-2">
                     <span className="p-2 bg-violet-100 rounded-lg text-lg">🧪</span> Testeur de Modulo
                 </h3>
@@ -150,7 +150,7 @@ export default function EvenOddLesson() {
                 ) : (
                     <div className="space-y-8 animate-question">
                         {/* Barre d'infos Jeu */}
-                        <div className="flex justify-between items-center bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
+                        <div className="flex justify-between items-center bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100">
                             <div className="flex flex-col">
                                 <span className="text-[10px] font-black text-slate-400 uppercase">Temps</span>
                                 <span className={`text-xl font-black ${timer < 10 ? 'text-rose-500 animate-pulse' : 'text-slate-700'}`}>{timer}s</span>
@@ -163,13 +163,13 @@ export default function EvenOddLesson() {
                         </div>
 
                         {/* Zone de Drag */}
-                        <div className="bg-white p-6 rounded-3xl border-2 border-dashed border-slate-200 min-h-[120px] flex flex-wrap justify-center gap-3">
+                        <div className="bg-white dark:bg-slate-900 p-6 rounded-3xl border-2 border-dashed border-slate-200 dark:border-slate-800 min-h-[120px] flex flex-wrap justify-center gap-3">
                             {dragItems.map(n => (
                                 <div
                                     key={n}
                                     draggable
                                     onDragStart={e => e.dataTransfer.setData('text/plain', n)}
-                                    className="w-14 h-14 bg-white border-2 border-slate-100 rounded-2xl flex items-center justify-center font-black text-slate-700 shadow-sm cursor-grab active:cursor-grabbing hover:border-violet-300 hover:text-violet-600 transition-all text-lg"
+                                    className="w-14 h-14 bg-white dark:bg-slate-900 border-2 border-slate-100 rounded-2xl flex items-center justify-center font-black text-slate-700 shadow-sm cursor-grab active:cursor-grabbing hover:border-violet-300 hover:text-violet-600 transition-all text-lg"
                                 >
                                     {n}
                                 </div>
