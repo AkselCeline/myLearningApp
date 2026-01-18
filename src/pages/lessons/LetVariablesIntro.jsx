@@ -6,8 +6,9 @@ export default function LetVariablesIntro() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        const normalized = answer.trim().replace(/\s+/g, '');
-        if (normalized === 'Bonjour,Samira!') {
+        // Validation flexible (on accepte avec ou sans l'espace après la virgule pour ne pas frustrer)
+        const normalized = answer.trim().toLowerCase();
+        if (normalized === 'bonjour, samira!' || normalized === 'bonjour,samira!') {
             setIsCorrect(true);
         } else {
             setIsCorrect(false);
@@ -15,69 +16,95 @@ export default function LetVariablesIntro() {
     }
 
     return (
-        <div className="max-w-xl mx-auto p-6 space-y-6 text-gray-800">
-            <h1 className="text-2xl font-bold">🟠 Comprendre les variables avec <code>let</code></h1>
-
-            <p>
-                Une <strong>variable</strong> permet de <em>stocker une valeur</em> (comme un mot, un nombre, un message).
-                On peut ensuite utiliser cette valeur plus tard dans le programme.
-            </p>
-
-            <p>On crée une variable avec <code>let</code> :</p>
-            <div className="bg-gray-100 p-4 rounded font-mono">
-                let prenom = "Samira";
+        <div className="space-y-10 py-4 animate-question">
+            {/* Header Conceptuel */}
+            <div className="bg-orange-500 rounded-[2.5rem] p-8 shadow-xl relative overflow-hidden text-white">
+                <div className="relative z-10">
+                    <h3 className="text-orange-100 text-xs font-black uppercase tracking-[0.2em] mb-4">Le concept de Variable</h3>
+                    <p className="text-2xl font-black leading-tight">
+                        Une variable, c'est comme une <span className="underline decoration-white underline-offset-4 italic text-slate-900">boîte étiquetée</span>.
+                    </p>
+                    <p className="mt-4 text-orange-50 font-medium">
+                        Tu ranges une information dedans, et tu l'appelles par son nom dès que tu en as besoin.
+                    </p>
+                </div>
+                <div className="absolute -right-6 -bottom-6 opacity-20 text-[10rem] font-black italic">LET</div>
             </div>
 
-            <p>Et on peut l’utiliser comme ceci :</p>
-            <div className="bg-gray-100 p-4 rounded font-mono">
-                console.log("Bonjour, " + prenom + "!");
-            </div>
+            {/* Illustration : Boîte vs Code */}
+            <section className="grid md:grid-cols-2 gap-6">
+                <div className="bg-white p-6 rounded-[2rem] border-2 border-slate-100 flex flex-col items-center justify-center space-y-4 shadow-sm">
+                    <div className="relative">
+                        <span className="text-6xl">📦</span>
+                        <div className="absolute -top-2 -right-2 bg-orange-500 text-white text-[10px] px-2 py-1 rounded-md font-bold shadow-sm">
+                            prenom
+                        </div>
+                    </div>
+                    <p className="text-slate-500 text-xs font-bold uppercase tracking-widest text-center">
+                        La boîte contient <br/> <span className="text-slate-900 text-lg">"Samira"</span>
+                    </p>
+                </div>
 
-            <p className="mt-4">Ce code affichera :</p>
-            <div className="bg-black text-white p-2 rounded font-mono">
-                Bonjour, Samira!
-            </div>
+                <div className="bg-slate-900 p-6 rounded-[2rem] flex flex-col justify-center shadow-xl">
+                    <p className="text-slate-500 text-[10px] font-black uppercase mb-4 tracking-widest">En JavaScript</p>
+                    <code className="text-orange-400 font-mono text-lg">
+                        <span className="text-pink-400 font-bold">let</span> prenom = <span className="text-amber-200">"Samira"</span>;
+                    </code>
+                </div>
+            </section>
 
-            {/* Mini Quiz */}
-            <form onSubmit={handleSubmit} className="space-y-2 mt-4">
-                <label>
-                    🔍 Que va afficher ce code ?
-                    <pre className="bg-gray-100 p-3 mt-1 rounded font-mono">
-{`let prenom = "Samira";
-console.log("Bonjour, " + prenom + "!");`}
-                    </pre>
-                    <input
-                        type="text"
-                        className="mt-2 block border border-gray-300 rounded px-2 py-1 w-full"
-                        placeholder='Écris exactement ce qui s’affiche'
-                        value={answer}
-                        onChange={(e) => setAnswer(e.target.value)}
-                    />
-                </label>
-                <button
-                    type="submit"
-                    className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-                >
-                    Vérifier
-                </button>
-                {isCorrect === true && (
-                    <p className="text-green-600 font-semibold">✅ C’est exact !</p>
-                )}
+            {/* Mini Challenge interactif */}
+            <section className="bg-white rounded-[2.5rem] border-2 border-slate-100 p-8 shadow-xl shadow-slate-200/50">
+                <div className="mb-6 text-center">
+                    <h2 className="text-xl font-black text-slate-800 uppercase tracking-tighter italic">Le Prédicteur de Message</h2>
+                    <p className="text-slate-400 font-bold text-[10px] uppercase mt-1">Devine ce que l'ordinateur va dire</p>
+                </div>
+
+                <div className="bg-slate-50 p-6 rounded-3xl font-mono text-sm space-y-2 border border-slate-100 mb-8 overflow-hidden">
+                    <div className="flex gap-4"><span className="text-slate-300">1</span> <span className="text-pink-400 italic">let</span> prenom = <span className="text-orange-600">"Samira"</span>;</div>
+                    <div className="flex gap-4"><span className="text-slate-300">2</span> <span className="text-indigo-500">console</span>.<span className="text-sky-500">log</span>(<span className="text-orange-600">"Bonjour, "</span> + prenom + <span className="text-orange-600">"!"</span>);</div>
+                </div>
+
+                <form onSubmit={handleSubmit} className="space-y-4">
+                    <div className="relative group">
+                        <input
+                            type="text"
+                            className={`w-full p-5 bg-slate-50 border-2 rounded-2xl outline-none font-bold transition-all text-center text-lg ${
+                                isCorrect === null ? "border-slate-100 focus:border-orange-500" :
+                                    isCorrect ? "border-emerald-500 bg-emerald-50 text-emerald-900" : "border-rose-500 bg-rose-50 text-rose-900"
+                            }`}
+                            placeholder='Bonjour, Samira !'
+                            value={answer}
+                            onChange={(e) => {
+                                setAnswer(e.target.value);
+                                setIsCorrect(null);
+                            }}
+                        />
+                        {isCorrect && <span className="absolute right-5 top-5 text-2xl animate-bounce">🎯</span>}
+                    </div>
+
+                    <button
+                        type="submit"
+                        className="w-full bg-slate-900 text-white py-5 rounded-2xl font-black text-lg hover:bg-slate-800 transition-all active:scale-95 shadow-xl"
+                    >
+                        Vérifier la valeur
+                    </button>
+                </form>
+
                 {isCorrect === false && (
-                    <p className="text-red-600 font-semibold">❌ Pas tout à fait. Relis bien le message affiché !</p>
+                    <div className="mt-4 p-4 bg-rose-100 text-rose-700 rounded-xl text-center font-bold animate-question text-sm">
+                        ❌ Oups ! N'oublie pas la virgule et le point d'exclamation.
+                    </div>
                 )}
-            </form>
+            </section>
 
-            <h2 className="text-xl font-semibold mt-6">✍️ À toi de jouer</h2>
-            <p>Crée une variable <code>nom</code> et affiche : <br /><strong>Bienvenue, nom !</strong></p>
-            <div className="bg-gray-100 p-4 rounded font-mono space-y-1">
-                <div>let nom = "Lina";</div>
-                <div>console.log("Bienvenue, " + nom + "!");</div>
+            {/* Aide Mémoire */}
+            <div className="bg-slate-50 p-6 rounded-3xl border border-slate-100 flex items-start gap-4">
+                <span className="text-2xl">💡</span>
+                <p className="text-slate-600 text-sm font-medium leading-relaxed">
+                    Le signe <span className="font-bold text-slate-800">=</span> ne veut pas dire "égal" comme en maths. Il veut dire <span className="text-orange-600 font-bold italic">"range cette valeur dans cette boîte"</span>.
+                </p>
             </div>
-
-            <p className="mt-4">
-                Tu peux tester ce code dans la console de ton navigateur ou sur <a href="https://jsconsole.com" target="_blank" className="text-blue-600 underline">jsconsole.com</a> !
-            </p>
         </div>
     );
 }

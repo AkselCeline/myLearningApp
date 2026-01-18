@@ -5,13 +5,12 @@ const countingSteps = [1, 2, 3, 4, 5];
 export default function BoucleIntro() {
     const [quizAnswer, setQuizAnswer] = useState('');
     const [quizResult, setQuizResult] = useState(null);
-
     const [shuffledNumbers, setShuffledNumbers] = useState(shuffleArray(countingSteps));
     const [draggedId, setDraggedId] = useState(null);
     const [orderResult, setOrderResult] = useState(null);
 
     function shuffleArray(array) {
-        return array
+        return [...array]
             .map(value => ({ value, sort: Math.random() }))
             .sort((a, b) => a.sort - b.sort)
             .map(({ value }) => value);
@@ -19,7 +18,6 @@ export default function BoucleIntro() {
 
     function handleQuizSubmit(e) {
         e.preventDefault();
-        // Réponse correcte : 3 fois
         if (quizAnswer.trim() === '3') {
             setQuizResult(true);
         } else {
@@ -27,15 +25,10 @@ export default function BoucleIntro() {
         }
     }
 
-    function handleDragStart(id) {
-        setDraggedId(id);
-    }
+    const handleDragStart = (id) => setDraggedId(id);
+    const handleDragOver = (e) => e.preventDefault();
 
-    function handleDragOver(e) {
-        e.preventDefault();
-    }
-
-    function handleDrop(id) {
+    const handleDrop = (id) => {
         const draggedIndex = shuffledNumbers.indexOf(draggedId);
         const dropIndex = shuffledNumbers.indexOf(id);
         const newOrder = [...shuffledNumbers];
@@ -43,7 +36,7 @@ export default function BoucleIntro() {
         newOrder.splice(dropIndex, 0, draggedId);
         setShuffledNumbers(newOrder);
         setDraggedId(null);
-    }
+    };
 
     function checkOrder() {
         const correct = shuffledNumbers.every((num, idx) => num === countingSteps[idx]);
@@ -51,70 +44,109 @@ export default function BoucleIntro() {
     }
 
     return (
-        <div className="max-w-xl mx-auto p-6 space-y-8 font-sans">
-            <p className="text-lg">
-                Une <strong>boucle</strong> dans un algorithme sert à répéter plusieurs fois une action. Par exemple, afficher "Bonjour !" 5 fois.
-            </p>
+        <div className="space-y-10 py-4 animate-question">
+            {/* Concept de base */}
+            <div className="bg-sky-50 border-l-4 border-sky-500 p-6 rounded-r-2xl">
+                <p className="text-slate-700 text-lg leading-relaxed">
+                    Une <span className="font-black text-sky-700">boucle</span> est un super-pouvoir qui permet de répéter une action sans avoir à l'écrire plusieurs fois. C'est l'outil parfait pour les tâches répétitives !
+                </p>
+            </div>
 
-            <h2 className="text-2xl font-semibold mt-6">Exemple : Compter de 1 à 5</h2>
-            <p>Voici les nombres de 1 à 5, répétés grâce à une boucle :</p>
-            <ol className="list-decimal list-inside space-y-1">
-                {countingSteps.map(num => (
-                    <li key={num}>{num}</li>
-                ))}
-            </ol>
+            {/* Illustration visuelle */}
 
-            {/* Quiz */}
-            <section className="mt-8">
-                <h3 className="text-xl font-semibold">Quiz rapide</h3>
-                <form onSubmit={handleQuizSubmit} className="mt-2 space-y-2">
-                    <label className="block">
-                        Combien de fois la phrase "Bonjour !" est affichée si on répète 3 fois ?
-                        <input
-                            type="text"
-                            className="block border border-gray-400 rounded px-2 py-1 mt-1 w-full"
-                            value={quizAnswer}
-                            onChange={e => setQuizAnswer(e.target.value)}
-                            placeholder="Écris ta réponse ici"
-                        />
-                    </label>
-                    <button
-                        type="submit"
-                        className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
-                    >
-                        Valider
-                    </button>
-                </form>
-                {quizResult === true && <p className="mt-2 text-green-600 font-semibold">Bravo ! C’est la bonne réponse.</p>}
-                {quizResult === false && <p className="mt-2 text-red-600 font-semibold">Essaie encore :)</p>}
+
+            [Image of a for loop flowchart]
+
+            <section>
+                <h2 className="text-xl font-black text-slate-800 mb-6 flex items-center gap-2">
+                    <span className="text-2xl">🔄</span> Exemple : Compter jusqu'à 5
+                </h2>
+                <div className="flex flex-wrap gap-3">
+                    {countingSteps.map((num) => (
+                        <div key={num} className="flex items-center justify-center w-12 h-12 bg-white border-2 border-sky-100 rounded-xl shadow-sm text-sky-600 font-black text-xl animate-bounce" style={{ animationDelay: `${num * 0.1}s` }}>
+                            {num}
+                        </div>
+                    ))}
+                </div>
+                <p className="mt-4 text-slate-500 text-sm italic">Imagine devoir écrire "Afficher 1", "Afficher 2"... une boucle le fait pour toi en 3 lignes !</p>
             </section>
 
-            {/* Jeu de mise en ordre */}
-            <section className="mt-8">
-                <h3 className="text-xl font-semibold mb-2">Mets les nombres dans le bon ordre</h3>
-                <p>Fais glisser et dépose les nombres pour les remettre dans l’ordre de 1 à 5 :</p>
-                <ul className="space-y-2">
-                    {shuffledNumbers.map(num => (
+            {/* Quiz Interactif */}
+            <section className="bg-slate-50 p-8 rounded-[2rem] border border-slate-100">
+                <h3 className="text-xl font-black text-slate-800 mb-4">Quiz logique</h3>
+                <form onSubmit={handleQuizSubmit} className="space-y-4">
+                    <label className="block text-slate-600 font-medium mb-2">
+                        Si une boucle demande à l'ordinateur de dire "Bonjour !" 3 fois de suite, combien de fois entendras-tu "Bonjour !" ?
+                    </label>
+                    <div className="flex flex-col sm:flex-row gap-3">
+                        <input
+                            type="number"
+                            className="flex-1 p-4 bg-white border-2 border-slate-200 rounded-2xl focus:border-sky-500 outline-none font-bold text-slate-700 transition-all text-center"
+                            value={quizAnswer}
+                            onChange={e => setQuizAnswer(e.target.value)}
+                            placeholder="Écris le chiffre..."
+                        />
+                        <button
+                            type="submit"
+                            className="bg-slate-900 text-white px-8 py-4 rounded-2xl font-black hover:bg-slate-800 transition-all active:scale-95 shadow-lg shadow-slate-200"
+                        >
+                            Vérifier
+                        </button>
+                    </div>
+                </form>
+                {quizResult !== null && (
+                    <div className={`mt-4 p-4 rounded-xl font-bold flex items-center gap-2 animate-question ${quizResult ? "bg-emerald-100 text-emerald-700" : "bg-rose-100 text-rose-700"}`}>
+                        {quizResult ? "✨ Exact ! La boucle se répète précisément le nombre de fois demandé." : "❌ Pas tout à fait. La boucle ne change pas le compte !"}
+                    </div>
+                )}
+            </section>
+
+            {/* Jeu : Remettre les étapes en boucle */}
+            <section>
+                <div className="flex justify-between items-end mb-6">
+                    <div>
+                        <h3 className="text-xl font-black text-slate-800">Répare la séquence</h3>
+                        <p className="text-slate-400 text-sm">Remets les nombres dans l'ordre pour que la boucle fonctionne.</p>
+                    </div>
+                    <span className="text-[10px] font-black bg-sky-100 text-sky-600 px-3 py-1 rounded-full uppercase tracking-widest mb-1">
+                        Interactif
+                    </span>
+                </div>
+
+                <ul className="flex flex-col gap-3">
+                    {shuffledNumbers.map((num) => (
                         <li
                             key={num}
                             draggable
                             onDragStart={() => handleDragStart(num)}
                             onDragOver={handleDragOver}
                             onDrop={() => handleDrop(num)}
-                            className="border border-gray-300 rounded px-4 py-2 cursor-move bg-gray-50 hover:bg-gray-100"
+                            className={`flex items-center p-5 bg-white border-2 rounded-2xl cursor-grab active:cursor-grabbing transition-all ${
+                                draggedId === num ? "opacity-20 scale-95 border-dashed border-sky-300" : "border-slate-100 hover:border-sky-200 hover:shadow-md"
+                            }`}
                         >
-                            {num}
+                            <div className="w-10 h-10 rounded-xl bg-sky-50 text-sky-500 flex items-center justify-center font-black mr-4 border border-sky-100">
+                                {num}
+                            </div>
+                            <span className="font-bold text-slate-700">Nombre {num}</span>
                         </li>
                     ))}
                 </ul>
-                <button
-                    onClick={checkOrder}
-                    className="mt-4 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition"
-                >
-                    Vérifier l’ordre
-                </button>
-                {orderResult === true && <p className="mt-2 text-green-600 font-semibold">Super ! Tu as tout mis dans le bon ordre.</p>}
-                {orderResult === false && <p className="mt-2 text-red-600 font-semibold">Pas encore, essaie de nouveau.</p>}
+
+                <div className="mt-8 flex flex-col items-center gap-4">
+                    <button
+                        onClick={checkOrder}
+                        className="w-full sm:w-auto bg-sky-500 text-white px-10 py-4 rounded-2xl font-black shadow-xl shadow-sky-100 hover:bg-sky-600 transition-all hover:-translate-y-1 active:scale-95"
+                    >
+                        Valider l'ordre
+                    </button>
+
+                    {orderResult !== null && (
+                        <div className={`w-full p-6 rounded-[2rem] text-center font-black animate-question ${orderResult ? "bg-emerald-500 text-white shadow-xl shadow-emerald-200" : "bg-rose-50 text-rose-600 border border-rose-100"}`}>
+                            {orderResult ? "🏆 Parfait ! Ta boucle est maintenant prête à tourner à l'infini." : "🧐 Un chiffre n'est pas à sa place, réessaie !"}
+                        </div>
+                    )}
+                </div>
             </section>
         </div>
     );

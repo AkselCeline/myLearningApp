@@ -7,11 +7,6 @@ export default function LeapYearLesson() {
     const [quizAnswer, setQuizAnswer] = useState('');
     const [quizFeedback, setQuizFeedback] = useState(null);
 
-    const leapQuiz = {
-        question: "L'année 1900 est-elle bissextile ?",
-        correctAnswer: "non"
-    };
-
     const checkLeapYear = () => {
         const y = parseInt(year);
         if (isNaN(y)) {
@@ -21,113 +16,140 @@ export default function LeapYearLesson() {
         }
 
         if (y % 4 !== 0) {
-            setResult("Non bissextile");
-            setExplanation(`${y} n'est pas divisible par 4.`);
+            setResult({ text: "Commune", isLeap: false });
+            setExplanation(`L'année ${y} n'est pas divisible par 4. Pas de 29 février !`);
         } else if (y % 100 !== 0) {
-            setResult("Bissextile");
-            setExplanation(`${y} est divisible par 4 mais pas par 100.`);
+            setResult({ text: "Bissextile", isLeap: true });
+            setExplanation(`Divisible par 4 mais pas par 100 : c'est une année bissextile.`);
         } else if (y % 400 === 0) {
-            setResult("Bissextile");
-            setExplanation(`${y} est divisible par 100 et aussi par 400.`);
+            setResult({ text: "Bissextile", isLeap: true });
+            setExplanation(`Exception de l'exception : divisible par 400 ! Elle est bissextile.`);
         } else {
-            setResult("Non bissextile");
-            setExplanation(`${y} est divisible par 100 mais pas par 400.`);
+            setResult({ text: "Commune", isLeap: false });
+            setExplanation(`Divisible par 100 mais pas par 400 : elle perd son titre de bissextile.`);
         }
     };
 
     const checkQuiz = () => {
         const answer = quizAnswer.trim().toLowerCase();
-        setQuizFeedback(answer === leapQuiz.correctAnswer ? "Bonne réponse ✅" : "Mauvaise réponse ❌");
+        setQuizFeedback(answer === "non" ? "Correct ! 1900 est divisible par 100 mais pas par 400. ✅" : "Et non ! C'est le piège classique des siècles. ❌");
     };
 
     return (
-        <div className="max-w-2xl mx-auto p-6 space-y-6 font-sans">
-            <h1 className="text-2xl font-bold">🗓️ Est-ce une année bissextile ?</h1>
+        <div className="space-y-10 py-4 animate-question">
+            {/* Header Calendrier */}
+            <section className="bg-slate-900 rounded-[2.5rem] p-8 text-white shadow-xl relative overflow-hidden">
+                <div className="relative z-10">
+                    <h3 className="text-amber-400 text-xs font-black uppercase tracking-[0.2em] mb-4">L'énigme du 29 Février</h3>
+                    <p className="text-xl font-medium leading-relaxed">
+                        Toutes les années divisibles par 4 ne sont pas bissextiles. <br/>
+                        C'est un <span className="text-amber-300 font-black italic underline decoration-white underline-offset-4">filtre logique</span> à trois étapes.
+                    </p>
+                </div>
+                <div className="absolute -right-6 -bottom-6 opacity-10 text-[10rem] font-black italic">366</div>
+            </section>
 
-            <p>
-                Une année est bissextile si elle suit ces règles :
-                <ul className="list-disc list-inside mt-2">
-                    <li>Elle est divisible par 4</li>
-                    <li><strong>Mais</strong> si elle est divisible par 100, elle n'est pas bissextile</li>
-                    <li><strong>Sauf</strong> si elle est aussi divisible par 400, alors elle est bissextile</li>
-                </ul>
-            </p>
-
-            {/* Explication du modulo */}
-            <div className="bg-yellow-100 p-4 rounded mt-4">
-                <h2 className="text-lg font-semibold mb-2">🔍 C’est quoi le modulo <code>%</code> ?</h2>
-                <p>Le symbole <code>%</code> s'appelle le <strong>modulo</strong>. Il donne le <strong>reste</strong> d'une division.</p>
-                <ul className="list-disc list-inside mt-2">
-                    <li><code>10 % 3 = 1</code> → 10 divisé par 3 = reste 1</li>
-                    <li><code>12 % 4 = 0</code> → 12 est divisible par 4</li>
-                </ul>
-                <p className="mt-2 italic">Imagine que tu veux mettre 10 bonbons dans des sacs de 3… Tu remplis 3 sacs, il te reste 1 bonbon → <code>10 % 3 = 1</code></p>
+            {/* Focus : Le Modulo % */}
+            <div className="bg-amber-50 rounded-[2rem] p-8 border-2 border-amber-100 relative group">
+                <div className="absolute -top-4 left-8 bg-amber-400 text-white px-4 py-1 rounded-full text-xs font-black uppercase shadow-lg">
+                    Outil : Le Modulo %
+                </div>
+                <div className="grid md:grid-cols-2 gap-6 items-center">
+                    <div>
+                        <p className="text-amber-900 font-bold leading-relaxed">
+                            Le modulo donne le <span className="underline decoration-amber-500 underline-offset-4">reste</span> d'une division.
+                        </p>
+                        <p className="text-amber-700 text-sm mt-3 italic">
+                            Si <code className="bg-white px-2 py-0.5 rounded font-bold">Année % 4 === 0</code>, cela veut dire que l'année est parfaitement divisible par 4.
+                        </p>
+                    </div>
+                    <div className="bg-white/60 p-4 rounded-2xl space-y-2 font-mono text-sm shadow-inner">
+                        <div className="flex justify-between"><span>10 % 3</span> <span className="font-black text-amber-600">reste 1</span></div>
+                        <div className="flex justify-between"><span>12 % 4</span> <span className="font-black text-emerald-600">reste 0</span></div>
+                    </div>
+                </div>
             </div>
 
             {/* Testeur d'année */}
-            <div>
-                <label className="block mb-1 font-medium mt-4">Entre une année :</label>
-                <input
-                    type="number"
-                    value={year}
-                    onChange={e => setYear(e.target.value)}
-                    className="border px-3 py-2 rounded w-full"
-                    placeholder="Ex: 2024"
-                />
-                <button
-                    onClick={checkLeapYear}
-                    className="mt-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-                >
-                    Tester
-                </button>
-            </div>
-
-            {result && (
-                <div className="mt-3 p-4 bg-gray-100 rounded">
-                    <p className="font-bold">Résultat : {result}</p>
-                    <p className="text-sm mt-1">{explanation}</p>
+            <section className="bg-white rounded-[2rem] border-2 border-slate-100 p-8 shadow-sm">
+                <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-6">Simulateur de Calendrier</h3>
+                <div className="flex flex-col sm:flex-row gap-3 mb-6">
+                    <input
+                        type="number"
+                        value={year}
+                        onChange={e => { setYear(e.target.value); setResult(null); }}
+                        className="flex-1 p-5 bg-slate-50 border-2 border-slate-100 rounded-3xl outline-none focus:border-indigo-500 font-black text-2xl text-slate-700 transition-all text-center"
+                        placeholder="Ex: 2024"
+                    />
+                    <button
+                        onClick={checkLeapYear}
+                        className="bg-indigo-600 text-white px-8 py-4 rounded-3xl font-black hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-100 active:scale-95"
+                    >
+                        Analyser
+                    </button>
                 </div>
-            )}
 
-            {/* Mini quiz */}
-            <div className="mt-6">
-                <h2 className="text-xl font-semibold">🎯 Quiz rapide</h2>
-                <p className="mt-2">{leapQuiz.question}</p>
-                <input
-                    type="text"
-                    value={quizAnswer}
-                    onChange={e => setQuizAnswer(e.target.value)}
-                    placeholder="oui / non"
-                    className="border px-2 py-1 rounded mt-2"
-                />
-                <button
-                    onClick={checkQuiz}
-                    className="ml-2 px-3 py-1 bg-green-600 text-white rounded hover:bg-green-700"
-                >
-                    Valider
-                </button>
-                {quizFeedback && (
-                    <p className="mt-2 font-semibold">
-                        {quizFeedback}
-                    </p>
+                {result && (
+                    <div className={`p-6 rounded-[2rem] animate-question border-2 ${result.isLeap ? 'bg-emerald-50 border-emerald-100' : 'bg-slate-50 border-slate-100'}`}>
+                        <div className="flex items-center gap-4">
+                            <div className={`text-4xl ${result.isLeap ? 'animate-bounce' : ''}`}>
+                                {result.isLeap ? '🌟' : '📅'}
+                            </div>
+                            <div>
+                                <h4 className={`text-lg font-black ${result.isLeap ? 'text-emerald-700' : 'text-slate-700'}`}>
+                                    Année {result.text}
+                                </h4>
+                                <p className="text-sm text-slate-500 font-medium">{explanation}</p>
+                            </div>
+                        </div>
+                    </div>
                 )}
-            </div>
+            </section>
 
-            {/* Pseudo-code */}
-            <div className="mt-8">
-                <h2 className="text-xl font-semibold">🧾 Pseudo-code de l’algorithme</h2>
-                <pre className="bg-gray-100 p-4 rounded text-sm whitespace-pre-wrap mt-2">
-{`Lire une année
+            {/* Pseudo-code & Logic Tree */}
+            <div className="grid md:grid-cols-2 gap-6 items-start">
+                <div className="bg-slate-900 p-6 rounded-[2rem] shadow-2xl overflow-hidden relative">
+                    <div className="text-xs font-black text-slate-500 uppercase mb-4 tracking-widest">Algorithme (Pseudo-code)</div>
+                    <pre className="text-indigo-300 font-mono text-xs leading-relaxed">
+                        <span className="text-pink-400 italic font-sans">// Étape 1</span><br/>
+                        <span className="text-pink-400">SI</span> année % 4 != 0 <span className="text-pink-400">ALORS</span><br/>
+                        {"  "}Afficher "Commune"<br/>
+                        <span className="text-pink-400">SINON SI</span> année % 100 != 0 <span className="text-pink-400">ALORS</span><br/>
+                        {"  "}Afficher "Bissextile"<br/>
+                        <span className="text-pink-400">SINON SI</span> année % 400 == 0 <span className="text-pink-400">ALORS</span><br/>
+                        {"  "}Afficher "Bissextile"<br/>
+                        <span className="text-pink-400">SINON</span><br/>
+                        {"  "}Afficher "Commune"
+                    </pre>
+                </div>
 
-Si (année % 4 ≠ 0)
-    Afficher "Non bissextile"
-Sinon si (année % 100 ≠ 0)
-    Afficher "Bissextile"
-Sinon si (année % 400 = 0)
-    Afficher "Bissextile"
-Sinon
-    Afficher "Non bissextile"`}
-        </pre>
+                {/* Quiz Rapide */}
+                <div className="bg-indigo-50 p-8 rounded-[2rem] border border-indigo-100">
+                    <h4 className="text-indigo-900 font-black flex items-center gap-2 mb-4">
+                        <span className="p-2 bg-white rounded-lg shadow-sm">🎯</span> Quiz Express
+                    </h4>
+                    <p className="text-indigo-700 font-medium text-sm mb-4 leading-relaxed">
+                        L'année <strong>1900</strong> est-elle bissextile ?
+                        <span className="block text-[10px] text-indigo-400 mt-1 uppercase tracking-tighter">(Indice : elle est divisible par 100 mais pas par 400)</span>
+                    </p>
+                    <div className="flex gap-2">
+                        <input
+                            type="text"
+                            value={quizAnswer}
+                            onChange={e => { setQuizAnswer(e.target.value); setQuizFeedback(null); }}
+                            placeholder="Oui ou Non ?"
+                            className="flex-1 px-4 py-3 rounded-xl border-2 border-indigo-100 outline-none focus:border-indigo-400 font-bold transition-all"
+                        />
+                        <button onClick={checkQuiz} className="bg-indigo-600 text-white px-6 py-3 rounded-xl font-black hover:bg-indigo-700 transition-all shadow-md">
+                            Vérifier
+                        </button>
+                    </div>
+                    {quizFeedback && (
+                        <div className={`mt-4 p-3 rounded-xl text-xs font-black text-center animate-question ${quizFeedback.includes('Correct') ? 'bg-emerald-100 text-emerald-700' : 'bg-rose-100 text-rose-700'}`}>
+                            {quizFeedback}
+                        </div>
+                    )}
+                </div>
             </div>
         </div>
     );
