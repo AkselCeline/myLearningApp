@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 // Importation de tes composants (assure-toi que les noms correspondent)
-import VariableIntro from './VariableIntro';
+import VariableIntro from './algo/VariableIntro';
 import LetVariablesIntro from './LetVariablesIntro';
 import InverserVariables from './InverserVariables';
 import PositiveNegativeLesson from './PositiveNegativeLesson';

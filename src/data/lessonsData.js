@@ -1,5 +1,5 @@
 // data/lessonsData.js
-import ConditionIntro from "../pages/lessons/ConditionIntro";
+import ConditionIntro from "../pages/lessons/algo/ConditionIntro";
 
 const lessonsData = {
     java: {
@@ -67,10 +67,11 @@ const lessonsData = {
                     { id: 1, title: "Qu’est-ce qu’un algorithme ?", type: "cours",  component: "AlgorithmeIntro" },
                     { id: 2, title: "Conditions : si… alors… sinon…", type: "cours",  component: "ConditionIntro" },
                     { id: 3, title: "Boucles : répéter facilement une action", type: "cours",  component: "BoucleIntro" },
-                    { id: 15, title: "LoopAnimation – Jeu sur les boucles", type: "jeux",  component: "LoopAnimation" },
+                    // { id: 15, title: "LoopAnimation – Jeu sur les boucles", type: "jeux",  component: "LoopAnimation" },
                     { id: 4, title: "Les variables : stocker et réutiliser des valeurs", type: "cours",  component: "VariableIntro" },
-                    { id: 5, title: "Fonctions : regrouper des instructions", type: "cours",  component: "FunctionIntro" },
-                    { id: 6, title: "Jeu de logique : suit la bonne séquence", type: "jeu",  component: "LogicGameIntro" }
+                    { id: 5, title: "Fonctions : regrouper des instructions", type: "cours",  component: "FonctionIntro" },
+                    { id: 6, title: "Les Tableaux (Arrays)", type: "cours",  component: "TableauIntro" },
+                    { id: 7, title: "Donjon de l'Algo", type: "jeux",  component: "AlgoRevision" }
                 ],
 
             },
@@ -101,6 +102,22 @@ const lessonsData = {
             },
         ],
     },
+
+    html: {
+        theme: "html",
+        levels: [
+            {
+                name: "Débutant – Les bases de HTML",
+                courses: [
+                    {id: 1, title: "Le HTML, ce sont les murs et les poutres. Sans lui, rien ne tient", type: "cours", component: "HtmlIntro"},
+                    {id: 2, title: "Le CSS - Donner du Style", type: "cours", component: "CssIntro"},
+                    {id: 3, title: "Le CSS - Le Box Model", type: "cours", component: "BoxModelIntro"},
+                    {id: 4, title: "Projet Pratique : La Carte de Profil de Développeur", type: "jeux", component: "ProjetCarteProfil"},
+
+                ],
+            }
+        ]
+    }
 
     // Tu peux ajouter HTTP, Spring, etc. de la même manière
 };

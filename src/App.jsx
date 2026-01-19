@@ -9,11 +9,15 @@ import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
 import LessonPage from './pages/LessonPage';
 import CourseDetail from "./pages/CourseDetail";
-import AlgorithmeIntro from './pages/lessons/AlgorithmeIntro';
-import ConditionIntro from './pages/lessons/ConditionIntro';
-import BoucleIntro from './pages/lessons/BoucleIntro';
-import VariableIntro from './pages/lessons/VariableIntro';
-import FunctionIntro from './pages/lessons/FunctionIntro';
+import AlgorithmeIntro from './pages/lessons/algo/AlgorithmeIntro';
+import ConditionIntro from './pages/lessons/algo/ConditionIntro';
+import BoucleIntro from './pages/lessons/algo/BoucleIntro';
+import VariableIntro from './pages/lessons/algo/VariableIntro';
+import FunctionIntro from './pages/lessons/algo/FonctionIntro';
+import HtmlIntro from './pages/lessons/html/HtmlIntro';
+import CssIntro from './pages/lessons/html/CssIntro';
+import BoxModelIntro from './pages/lessons/html/BoxModelIntro';
+import ProjetCarteProfil from './pages/lessons/html/ProjetCarteProfil';
 import LogicGameIntro from './pages/lessons/LogicGameIntro';
 import ConsoleLogIntro from './pages/lessons/ConsoleLogIntro';
 import LetVariablesIntro from './pages/lessons/LetVariablesIntro';
@@ -49,6 +53,10 @@ export default function App() {
                         <Route path="/lessons/algorithme/course/boucleIntro" element={<BoucleIntro />} />
                         <Route path="/lessons/algorithme/course/variableIntro" element={<VariableIntro />} />
                         <Route path="/lessons/algorithme/course/functionIntro" element={<FunctionIntro />} />
+                        <Route path="/lessons/html/course/HtmlIntro" element={<HtmlIntro />} />
+                        <Route path="/lessons/html/course/CssIntro" element={<CssIntro />} />
+                        <Route path="/lessons/html/course/BoxModelIntro" element={<BoxModelIntro />} />
+                        <Route path="/lessons/html/course/ProjetCarteProfil" element={<ProjetCarteProfil />} />
                         <Route path="/lessons/algorithme/course/logicGameIntro" element={<LogicGameIntro />} />
                         <Route path="/lessons/algorithme/course/consoleLogIntro" element={<ConsoleLogIntro />} />
                         <Route path="/lessons/algorithme/course/letVariablesIntro" element={<LetVariablesIntro />} />
