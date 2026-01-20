@@ -14,6 +14,15 @@ import HtmlIntro from "./lessons/html/HtmlIntro";
 import CssIntro from "./lessons/html/CssIntro";
 import BoxModelIntro from "./lessons/html/BoxModelIntro";
 import ProjetCarteProfil from './lessons/html/ProjetCarteProfil';
+import JsBasics from './lessons/JavaScript/JsBasics';
+import JsDom from "./lessons/JavaScript/JsDom";
+import JsEvents from "./lessons/JavaScript/JsEvents";
+import JsCounter from "./lessons/JavaScript/JsCounter";
+import JsQuiz from "./lessons/JavaScript/JsQuiz";
+import GitIntro from "./lessons/git/GitIntro";
+import GitCommit from "./lessons/git/GitCommit";
+import GitPush from "./lessons/git/GitPush";
+import GitTerminalGame from "./lessons/git/GitTerminalGame";
 
 // --- 2. LE MAPPING ---
 const componentsMap = {
@@ -28,13 +37,22 @@ const componentsMap = {
     "CssIntro": CssIntro,
     "BoxModelIntro": BoxModelIntro,
     "ProjetCarteProfil": ProjetCarteProfil,
+    "JsBasics": JsBasics,
+    "JsDom": JsDom,
+    "JsEvents": JsEvents,
+    "JsCounter": JsCounter,
+    "JsQuiz": JsQuiz,
+    "GitIntro": GitIntro,
+    "GitCommit": GitCommit,
+    "GitPush": GitPush,
+    "GitTerminalGame": GitTerminalGame,
 };
 
 export default function CourseDetail() {
     const { theme, courseId } = useParams();
 
     // Mapping d'URL
-    const themeMap = { "algo": "algorithme", "java": "java", "git": "git" };
+    const themeMap = { "algo": "algorithme", "java": "java", "git": "git", "html": "html", "javascript": "JavaScript" };
     const dataKey = themeMap[theme.toLowerCase()] || theme.toLowerCase();
 
     const themeData = lessonsData[dataKey];

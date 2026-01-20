@@ -13,7 +13,8 @@ export default function LessonPage() {
         "algo": "algorithme",
         "java": "java",
         "git": "git",
-        "HTML": "html"
+        "html": "html", // Assure-toi que c'est en minuscule si l'URL l'est
+        "javascript": "JavaScript" // L'URL est "javascript", la clé dans lessonsData est "JavaScript"
     };
 
     const dataKey = themeMap[theme.toLowerCase()] || theme.toLowerCase();

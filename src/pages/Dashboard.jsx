@@ -19,7 +19,8 @@ export default function Dashboard() {
         { id: "java", name: "Java", icon: "☕", color: "from-red-500 to-rose-600", totalLessons: 12 },
         { id: "spring", name: "Spring", icon: "🍃", color: "from-green-400 to-teal-600", totalLessons: 15 },
         { id: "security", name: "Sécurité", icon: "🛡️", color: "from-slate-500 to-slate-700", totalLessons: 5 },
-        { id: "HTML", name: "HTML", icon: "🏗️", color: "from-orange-500 to-red-600", totalLessons: 5 }    ];
+        { id: "html", name: "HTML", icon: "🏗️", color: "from-orange-500 to-red-600", totalLessons: 5 },
+        { id: "JavaScript", name: "JavaScript", icon: "⚡", color: "from-yellow-400 to-amber-500", totalLessons: 5 } ];
 
     const badges = [
         { id: "b1", name: "Algorithme", icon: "🧩" },
@@ -27,6 +28,7 @@ export default function Dashboard() {
         { id: "b3", name: "HTTP Explorer", icon: "🌐" },
         { id: "b4", name: "Ninja Java", icon: "☕" },
         { id: "b5", name: "HTML", icon: "🏗️" },
+        { id: "b6", name: "JavaScript", icon: "⚡" },
     ];
 
     const demoQuestions = [

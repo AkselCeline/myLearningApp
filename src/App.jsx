@@ -18,6 +18,14 @@ import HtmlIntro from './pages/lessons/html/HtmlIntro';
 import CssIntro from './pages/lessons/html/CssIntro';
 import BoxModelIntro from './pages/lessons/html/BoxModelIntro';
 import ProjetCarteProfil from './pages/lessons/html/ProjetCarteProfil';
+import JsBasics from './pages/lessons/JavaScript/JsBasics';
+import JsDom from "./pages/lessons/JavaScript/JsDom";
+import JsEvents from "./pages/lessons/JavaScript/JsEvents";
+import JsQuiz from "./pages/lessons/JavaScript/JsQuiz";
+import GitIntro from "./pages/lessons/git/GitIntro";
+import GitCommit from "./pages/lessons/git/GitCommit";
+import GitPush from "./pages/lessons/git/GitPush";
+import GitTerminalGame from "./pages/lessons/git/GitTerminalGame";
 import LogicGameIntro from './pages/lessons/LogicGameIntro';
 import ConsoleLogIntro from './pages/lessons/ConsoleLogIntro';
 import LetVariablesIntro from './pages/lessons/LetVariablesIntro';
@@ -31,6 +39,7 @@ import PositiveNegativeLesson from './pages/lessons/PositiveNegativeLesson';
 import AlphabetOrderLesson from './pages/lessons/AlphabetOrderLesson';
 import EvenOddLesson from './pages/lessons/EvenOddLesson';
 import {UserProvider} from "./context/UserContext";
+
 
 
 export default function App() {
@@ -48,7 +57,7 @@ export default function App() {
                         <Route path="/parametres" element={<Settings />} />
                         <Route path="/lessons/:theme" element={<LessonPage />} />
                         <Route path="/lessons/:theme/course/:courseId" element={<CourseDetail />} />
-                        <Route path="/lessons/algorithme/course/intro" element={<AlgorithmeIntro />} />
+                        <Route path="/lesshtmlons/algorithme/course/intro" element={<AlgorithmeIntro />} />
                         <Route path="/lessons/algorithme/course/conditionIntro" element={<ConditionIntro />} />
                         <Route path="/lessons/algorithme/course/boucleIntro" element={<BoucleIntro />} />
                         <Route path="/lessons/algorithme/course/variableIntro" element={<VariableIntro />} />
@@ -56,7 +65,15 @@ export default function App() {
                         <Route path="/lessons/html/course/HtmlIntro" element={<HtmlIntro />} />
                         <Route path="/lessons/html/course/CssIntro" element={<CssIntro />} />
                         <Route path="/lessons/html/course/BoxModelIntro" element={<BoxModelIntro />} />
-                        <Route path="/lessons/html/course/ProjetCarteProfil" element={<ProjetCarteProfil />} />
+                        <Route path="/lessons//course/ProjetCarteProfil" element={<ProjetCarteProfil />} />
+                        <Route path="/lessons/JavaScript/course/JsBasics" element={<JsBasics />} />
+                        <Route path="/lessons/JavaScript/course/JsDom" element={<JsDom />} />
+                        <Route path="/lessons/JavaScript/course/JsEvents" element={<JsEvents />} />
+                        <Route path="/lessons/JavaScript/course/JsQuiz" element={<JsQuiz />} />
+                        <Route path="/lessons/git/course/GitIntro" element={<GitIntro />} />
+                        <Route path="/lessons/git/course/GitCommit" element={<GitCommit />} />
+                        <Route path="/lessons/git/course/GitPush" element={<GitPush />} />
+                        <Route path="/lessons/git/course/GitTerminalGame" element={<GitTerminalGame />} />
                         <Route path="/lessons/algorithme/course/logicGameIntro" element={<LogicGameIntro />} />
                         <Route path="/lessons/algorithme/course/consoleLogIntro" element={<ConsoleLogIntro />} />
                         <Route path="/lessons/algorithme/course/letVariablesIntro" element={<LetVariablesIntro />} />

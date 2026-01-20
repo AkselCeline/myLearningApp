@@ -45,19 +45,6 @@ const lessonsData = {
         ],
     },
 
-    git: {
-        theme: "Git",
-        levels: [
-            {
-                name: "Débutant",
-                courses: [
-                    { id: 1, title: "Qu'est-ce que Git ?", type: "cours" },
-                    { id: 2, title: "Git init / Git add", type: "cours" },
-                ],
-            },
-        ],
-    },
-
     algorithme: {
         theme: "Algorithme",
         levels: [
@@ -117,7 +104,42 @@ const lessonsData = {
                 ],
             }
         ]
-    }
+    },
+
+    JavaScript: {
+        theme: "JavaScript",
+        levels: [
+            {
+                name: "Débutant – JavaScript Interactif",
+                courses: [
+                    { id: 1, title: "JS : Hello World !", type: "cours", component: "JsBasics"},
+                    { id: 2, title: "Les Événements : Réagir au clic", type: "cours", component: "JsEvents" },
+                    { id: 3, title: "DOM : Créer des éléments magiques", type: "cours", component: "JsDom" },
+                    { id: 4, title: "Mini-Projet : Compteur de Clics", type: "jeux", component: "JsCounter" },
+                    { id: 5, title: "🏆 Quiz Final : JavaScript", type: "jeux", component: "JsQuiz" },                ],
+            }
+        ]
+    },
+
+    git: {
+        id: "git",
+        theme: "Git",
+        icon: "📜",
+        color: "from-orange-600 to-rose-700",
+        levels: [
+            {
+                name: "Débutant – Sauvegarder son code",
+                courses: [
+                    { id: 1, title: "Qu'est-ce que Git ?", type: "cours", component: "GitIntro" },
+                    { id: 2, title: "Le Commit : Enregistrer une étape", type: "cours", component: "GitCommit" },
+                    { id: 3, title: "GitHub & Push : Partager son travail", type: "cours", component: "GitPush" },
+                    { id: 4, title: "⌨️ Défi : Le Terminal Git", type: "jeux", component: "GitTerminalGame" },
+                ],
+            }
+        ]
+    },
+
+
 
     // Tu peux ajouter HTTP, Spring, etc. de la même manière
 };
