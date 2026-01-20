@@ -28,6 +28,8 @@ import JavaJvm from "./lessons/java/JavaJvm";
 import JavaArrays from "./lessons/java/JavaArrays";
 import JavaVariables from "./lessons/java/JavaVariables";
 import JavaQuiz from "./lessons/java/JavaQuiz";
+import JavaConditions from "./lessons/java/JavaConditions";
+import JavaLoops from "./lessons/java/JavaLoops";
 
 const componentsMap = {
     AlgorithmeIntro: AlgorithmeIntro,
@@ -55,6 +57,8 @@ const componentsMap = {
     JavaVariables: JavaVariables,
     JavaArrays: JavaArrays,
     JavaQuiz: JavaQuiz,
+    JavaConditions: JavaConditions,
+    JavaLoops: JavaLoops,
 };
 
 export default function CoursePage() {

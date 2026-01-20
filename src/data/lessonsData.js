@@ -16,6 +16,8 @@ const lessonsData = {
                     { id: 3, title: "Variables & Types Stricts", type: "cours", component: "JavaVariables" },
                     { id: 4, title: "Les Tableaux : Listes Rigides", type: "cours", component: "JavaArrays" },
                     { id: 5, title: "🏆 Quiz Final : Java", type: "jeux", component: "JavaQuiz" },
+                    { id: 6, title: "Conditions : La Logique", type: "cours", component: "JavaConditions" },
+                    { id: 7, title: "Les Boucles (Loops)", type: "cours", component: "JavaLoops" },
                 ],
             }
         ]

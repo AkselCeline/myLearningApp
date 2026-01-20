@@ -31,6 +31,7 @@ import JavaJvm from "./pages/lessons/java/JavaJvm";
 import JavaVariables from "./pages/lessons/java/JavaVariables";
 import JavaArrays from "./pages/lessons/java/JavaArrays";
 import JavaQuiz from "./pages/lessons/java/JavaQuiz";
+import JavaConditions from "./pages/lessons/java/JavaConditions";
 import LogicGameIntro from './pages/lessons/LogicGameIntro';
 import ConsoleLogIntro from './pages/lessons/ConsoleLogIntro';
 import LetVariablesIntro from './pages/lessons/LetVariablesIntro';
@@ -44,6 +45,7 @@ import PositiveNegativeLesson from './pages/lessons/PositiveNegativeLesson';
 import AlphabetOrderLesson from './pages/lessons/AlphabetOrderLesson';
 import EvenOddLesson from './pages/lessons/EvenOddLesson';
 import {UserProvider} from "./context/UserContext";
+import JavaLoops from "./pages/lessons/java/JavaLoops";
 
 
 
@@ -84,6 +86,8 @@ export default function App() {
                         <Route path="/lessons/java/course/JavaVariables" element={<JavaVariables />} />
                         <Route path="/lessons/java/course/JavaArrays" element={<JavaArrays />} />
                         <Route path="/lessons/java/course/JavaQuiz" element={<JavaQuiz />} />
+                        <Route path="/lessons/java/course/JavaConditions" element={<JavaConditions />} />
+                        <Route path="/lessons/java/course/JavaLoops" element={<JavaLoops />} />
                         <Route path="/lessons/algorithme/course/logicGameIntro" element={<LogicGameIntro />} />
                         <Route path="/lessons/algorithme/course/consoleLogIntro" element={<ConsoleLogIntro />} />
                         <Route path="/lessons/algorithme/course/letVariablesIntro" element={<LetVariablesIntro />} />

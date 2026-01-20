@@ -28,6 +28,8 @@ import JavaJvm from "./lessons/java/JavaJvm";
 import JavaVariables from "./lessons/java/JavaVariables";
 import JavaArrays from "./lessons/java/JavaArrays";
 import JavaQuiz from "./lessons/java/JavaQuiz";
+import JavaConditions from "./lessons/java/JavaConditions";
+import JavaLoops from "./lessons/java/JavaLoops";
 
 // --- 2. LE MAPPING ---
 const componentsMap = {
@@ -56,6 +58,8 @@ const componentsMap = {
     "JavaVariables": JavaVariables,
     "JavaArrays": JavaArrays,
     "JavaQuiz": JavaQuiz,
+    "JavaConditions": JavaConditions,
+    "JavaLoops": JavaLoops,
 };
 
 export default function CourseDetail() {
