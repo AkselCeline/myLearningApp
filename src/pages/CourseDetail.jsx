@@ -23,6 +23,11 @@ import GitIntro from "./lessons/git/GitIntro";
 import GitCommit from "./lessons/git/GitCommit";
 import GitPush from "./lessons/git/GitPush";
 import GitTerminalGame from "./lessons/git/GitTerminalGame";
+import JavaIntro from "./lessons/java/JavaIntro";
+import JavaJvm from "./lessons/java/JavaJvm";
+import JavaVariables from "./lessons/java/JavaVariables";
+import JavaArrays from "./lessons/java/JavaArrays";
+import JavaQuiz from "./lessons/java/JavaQuiz";
 
 // --- 2. LE MAPPING ---
 const componentsMap = {
@@ -46,6 +51,11 @@ const componentsMap = {
     "GitCommit": GitCommit,
     "GitPush": GitPush,
     "GitTerminalGame": GitTerminalGame,
+    "JavaIntro": JavaIntro,
+    "JavaJvm": JavaJvm,
+    "JavaVariables": JavaVariables,
+    "JavaArrays": JavaArrays,
+    "JavaQuiz": JavaQuiz,
 };
 
 export default function CourseDetail() {

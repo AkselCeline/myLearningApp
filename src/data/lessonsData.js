@@ -3,46 +3,22 @@ import ConditionIntro from "../pages/lessons/algo/ConditionIntro";
 
 const lessonsData = {
     java: {
+        id: "java",
         theme: "Java",
+        icon: "☕",
+        color: "from-blue-600 to-cyan-700",
         levels: [
             {
-                name: "Débutant",
+                name: "Débutant – Les Fondations",
                 courses: [
-                    {
-                        id: 1,
-                        title: "Introduction à Java",
-                        type: "cours",
-                        content: "Java est un langage orienté objet très populaire...",
-                    },
-                    {
-                        id: 2,
-                        title: "Variables et types",
-                        type: "cours",
-                        content: "Les variables en Java permettent de stocker des données...",
-                    },
-                    {
-                        id: 3,
-                        title: "Jeu : Quiz Java",
-                        type: "jeu",
-                        content: {
-                            questions: [
-                                {
-                                    question: "Quel est le type de variable pour un nombre entier ?",
-                                    options: ["int", "String", "boolean"],
-                                    answer: 0,
-                                },
-                                {
-                                    question: "Quelle est la bonne façon de déclarer une variable ?",
-                                    options: ["int x = 5;", "var x 5;", "x := 5;"],
-                                    answer: 0,
-                                },
-                            ],
-                        },
-                    },
+                    { id: 1, title: "Java : Pourquoi ce langage ?", type: "cours", component: "JavaIntro" },
+                    { id: 2, title: "La Machine Virtuelle (JVM)", type: "cours", component: "JavaJvm" },
+                    { id: 3, title: "Variables & Types Stricts", type: "cours", component: "JavaVariables" },
+                    { id: 4, title: "Les Tableaux : Listes Rigides", type: "cours", component: "JavaArrays" },
+                    { id: 5, title: "🏆 Quiz Final : Java", type: "jeux", component: "JavaQuiz" },
                 ],
-            },
-            // niveaux intermédiaire, etc.
-        ],
+            }
+        ]
     },
 
     algorithme: {

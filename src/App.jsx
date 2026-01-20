@@ -26,6 +26,11 @@ import GitIntro from "./pages/lessons/git/GitIntro";
 import GitCommit from "./pages/lessons/git/GitCommit";
 import GitPush from "./pages/lessons/git/GitPush";
 import GitTerminalGame from "./pages/lessons/git/GitTerminalGame";
+import JavaIntro from "./pages/lessons/java/JavaIntro";
+import JavaJvm from "./pages/lessons/java/JavaJvm";
+import JavaVariables from "./pages/lessons/java/JavaVariables";
+import JavaArrays from "./pages/lessons/java/JavaArrays";
+import JavaQuiz from "./pages/lessons/java/JavaQuiz";
 import LogicGameIntro from './pages/lessons/LogicGameIntro';
 import ConsoleLogIntro from './pages/lessons/ConsoleLogIntro';
 import LetVariablesIntro from './pages/lessons/LetVariablesIntro';
@@ -74,6 +79,11 @@ export default function App() {
                         <Route path="/lessons/git/course/GitCommit" element={<GitCommit />} />
                         <Route path="/lessons/git/course/GitPush" element={<GitPush />} />
                         <Route path="/lessons/git/course/GitTerminalGame" element={<GitTerminalGame />} />
+                        <Route path="/lessons/java/course/JavaIntro" element={<JavaIntro />} />
+                        <Route path="/lessons/java/course/JavaJvm" element={<JavaJvm />} />
+                        <Route path="/lessons/java/course/JavaVariables" element={<JavaVariables />} />
+                        <Route path="/lessons/java/course/JavaArrays" element={<JavaArrays />} />
+                        <Route path="/lessons/java/course/JavaQuiz" element={<JavaQuiz />} />
                         <Route path="/lessons/algorithme/course/logicGameIntro" element={<LogicGameIntro />} />
                         <Route path="/lessons/algorithme/course/consoleLogIntro" element={<ConsoleLogIntro />} />
                         <Route path="/lessons/algorithme/course/letVariablesIntro" element={<LetVariablesIntro />} />
